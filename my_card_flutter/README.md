@@ -1,6 +1,6 @@
 # my_card_flutter
 
-A new Flutter project.
+business card online
 
 ## Getting Started
 
