@@ -10,36 +10,42 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SafeArea(
-        child: Scaffold(
-          backgroundColor: Colors.blue,
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+      home: Scaffold(
+        backgroundColor: Colors.teal,
+        body: SafeArea(
+          child: Row(
+            //crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                height: 100,
-                width: 100,
+                width: 100.0,
                 //margin: const EdgeInsets.all(20.0),
                 //padding: const EdgeInsets.only(top: 10.0),
-                color: Colors.white,
-                child: const Text("Container 1"),
+                color: Colors.red,
               ),
               // for spacing with specific height
-              const SizedBox(height: 10,),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
-                child: const Text("Container 2"),
+              //const SizedBox(height: 10,),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 100.0,
+                    height: 100.0,
+                    color: Colors.yellow,
+                  ),
+                  Container(
+                    width: 100.0,
+                    height: 100.0,
+                    color: Colors.green,
+                  ),
+                ],
               ),
               Container(
                 width: 100,
-                height: 100,
-                color: Colors.green,
-                child: const Text("Container 3"),
+                color: Colors.blue,
               ),
-
-
+          
+          
             ],
           ),
         ),
