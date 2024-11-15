@@ -14,13 +14,14 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.teal,
         body: SafeArea(
           child:Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const CircleAvatar(
+              CircleAvatar(
                 backgroundImage: AssetImage("images/file.png"),
-                radius: 50.0,
+                radius: 150.0,
                 backgroundColor: Colors.red,
               ),
-              const Text(
+              Text(
                 "Leandro Russo",
                 style: TextStyle(
                   fontFamily: "LibreBaskerville",
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const Text(
+              Text(
                 "Software Engineer",
                 style: TextStyle(
                   color: Colors.white,
@@ -37,49 +38,49 @@ class MyApp extends StatelessWidget {
                   fontFamily: "SourceCodePro",
                 ),
               ),
-              Container(
-                color: Colors.white,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                padding: EdgeInsets.all(20.0),
-                child: const Row(
-                  children: [
-                    Icon(
-                      Icons.phone,
-                      color: Colors.teal,
-                    ),
-                    SizedBox(width: 10.0,),
-                    Text("+44 123 456 678",
-                    style: TextStyle(
-                      fontFamily: "SourceCodePro",
-                      color: Colors.teal,
-                      fontSize: 20.0,
-                    ),)
-
-                  ],
+              SizedBox(
+                height: 20.0,
+                width: 150.0,
+                child: Divider(
+                  color: Colors.teal.shade100,
                 ),
               ),
-              Container(
+              Card(
                 color: Colors.white,
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                padding: EdgeInsets.all(20.0),
-                child: const Row(
-                  children: [
-                    Icon(
-                      Icons.email,
-                      color: Colors.teal,
-                    ),
-                    SizedBox(width: 10.0,),
-                    Text("leo123@gmail.com",
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: ListTile(
+                    leading: Icon(Icons.phone,
+                    color: Colors.teal,),
+                    title: Text("+44 123 456 678",
                       style: TextStyle(
                         fontFamily: "SourceCodePro",
                         color: Colors.teal,
                         fontSize: 20.0,
-                      ),)
-
-                  ],
+                      ),
+                    ),
+                  ),
                 ),
               ),
-
+              Card(
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: ListTile(
+                    leading: Icon(Icons.email,
+                    color: Colors.teal,),
+                    title: Text("leo123@gmail.com",
+                      style: TextStyle(
+                        fontFamily: "SourceCodePro",
+                        color: Colors.teal,
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
