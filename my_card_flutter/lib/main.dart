@@ -13,39 +13,73 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Row(
-            //crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child:Column(
             children: [
+              const CircleAvatar(
+                backgroundImage: AssetImage("images/file.png"),
+                radius: 50.0,
+                backgroundColor: Colors.red,
+              ),
+              const Text(
+                "Leandro Russo",
+                style: TextStyle(
+                  fontFamily: "LibreBaskerville",
+                  fontSize: 40.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const Text(
+                "Software Engineer",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                  fontFamily: "SourceCodePro",
+                ),
+              ),
               Container(
-                width: 100.0,
-                //margin: const EdgeInsets.all(20.0),
-                //padding: const EdgeInsets.only(top: 10.0),
-                color: Colors.red,
-              ),
-              // for spacing with specific height
-              //const SizedBox(height: 10,),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 100.0,
-                    height: 100.0,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    width: 100.0,
-                    height: 100.0,
-                    color: Colors.green,
-                  ),
-                ],
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                padding: EdgeInsets.all(20.0),
+                child: const Row(
+                  children: [
+                    Icon(
+                      Icons.phone,
+                      color: Colors.teal,
+                    ),
+                    SizedBox(width: 10.0,),
+                    Text("+44 123 456 678",
+                    style: TextStyle(
+                      fontFamily: "SourceCodePro",
+                      color: Colors.teal,
+                      fontSize: 20.0,
+                    ),)
+
+                  ],
+                ),
               ),
               Container(
-                width: 100,
-                color: Colors.blue,
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                padding: EdgeInsets.all(20.0),
+                child: const Row(
+                  children: [
+                    Icon(
+                      Icons.email,
+                      color: Colors.teal,
+                    ),
+                    SizedBox(width: 10.0,),
+                    Text("leo123@gmail.com",
+                      style: TextStyle(
+                        fontFamily: "SourceCodePro",
+                        color: Colors.teal,
+                        fontSize: 20.0,
+                      ),)
+
+                  ],
+                ),
               ),
-          
-          
+
             ],
           ),
         ),
