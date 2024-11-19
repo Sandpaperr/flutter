@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/Netflix_UI/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Netflix_UI/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Netflix_UI/build" />
+      <excludeFolder url="file://$MODULE_DIR$/destini/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/destini/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/destini/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dicee_flitter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/dicee_flitter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/dicee_flitter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/i_am_poor/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/i_am_poor/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/i_am_poor/build" />
+      <excludeFolder url="file://$MODULE_DIR$/i_am_rich/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/i_am_rich/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/i_am_rich/build" />
+      <excludeFolder url="file://$MODULE_DIR$/magic_8_ball_flutter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/magic_8_ball_flutter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/magic_8_ball_flutter/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
