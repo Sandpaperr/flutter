@@ -5,6 +5,7 @@ void main() => runApp(BMICalculator());
 class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // context.bmiPrimiaryColor;
     return MaterialApp(
       home: InputPage(),
       theme: ThemeData.dark().copyWith(
@@ -16,4 +17,12 @@ class BMICalculator extends StatelessWidget {
     );
   }
 }
+
+// extension BuilContextColor on BuildContext{
+//   Color get bmiPrimiaryColor => BMIColors.primaryColor;
+// }
+//
+// class BMIColors{
+//   static Color primaryColor = Colors.red;
+// }
 
