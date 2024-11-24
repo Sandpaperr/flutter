@@ -4,13 +4,16 @@ import 'package:flutter/material.dart';
 import '../components/reusable_card.dart';
 
 class ResultsPage extends StatelessWidget {
-  const ResultsPage({super.key});
+  ResultsPage({required this.bmiResult,required this.resultText, required this.resultInterpretation});
+  final String bmiResult;
+  final String resultText;
+  final String resultInterpretation;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: const Text('BMI CALCULATOR'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -18,7 +21,7 @@ class ResultsPage extends StatelessWidget {
         children: [
           Expanded(
               child: Container(
-                padding: EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(15.0),
                 alignment: Alignment.bottomLeft,
                 child: const Text('Your Result',
                   style: kTitleTextStyle,
@@ -29,13 +32,13 @@ class ResultsPage extends StatelessWidget {
             flex: 5,
             child: ReusableCard(
               colour: kActiveCardColor,
-              cardChild: const Column(
+              cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('NORMAL', style: kResultTextStyle,),
-                  Text('18.3', style: kBMITextStyle,),
-                  Text('Your BMI result is fine, go play with your friends', style: kBodyTextStyle, textAlign: TextAlign.center,),
+                  Text(resultText, style: kResultTextStyle,),
+                  Text(bmiResult, style: kBMITextStyle,),
+                  Text(resultInterpretation, style: kBodyTextStyle, textAlign: TextAlign.center,),
                 ],
               ),
             ),
