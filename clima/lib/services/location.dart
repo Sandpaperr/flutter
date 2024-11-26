@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
 class Location {
@@ -10,7 +9,7 @@ class Location {
       LocationPermission permission = await Geolocator.requestPermission();
 
       if (permission == LocationPermission.denied){
-        LocationPermission permission = await Geolocator.requestPermission();
+        permission = await Geolocator.requestPermission();
       } else if (permission == LocationPermission.deniedForever){
         throw 'permission denied forever. Location will be set to 0.00, 0.00';
       }
