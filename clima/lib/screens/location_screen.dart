@@ -12,7 +12,7 @@ class LocationScreen extends StatefulWidget {
 class _LocationScreenState extends State<LocationScreen> {
   int? temperature;
   String? cityName;
-  String? conditionEmoji;
+  String? weatherIcon;
   String? weatherMessage;
   WeatherModel weatherModel = WeatherModel();
 
@@ -25,12 +25,20 @@ class _LocationScreenState extends State<LocationScreen> {
 
   void updateUI(dynamic weatherData){
     setState(() {
+      if (weatherData == null){
+        temperature = 0;
+        weatherIcon = 'Error';
+        weatherMessage = 'Unable to get weather data';
+        cityName ='';
+        return;
+      }
       double temp = weatherData['main']['temp'];
       temperature = temp.toInt();
       var condition = weatherData['weather'][0]['id'];
       cityName = weatherData['name'];
-      conditionEmoji = weatherModel.getWeatherIcon(condition!);
+      weatherIcon = weatherModel.getWeatherIcon(condition!);
       weatherMessage = weatherModel.getMessage(temperature!);
+
     });
 
 
@@ -85,7 +93,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       style: kTempTextStyle,
                     ),
                     Text(
-                      '$conditionEmoji',
+                      '$weatherIcon',
                       style: kConditionTextStyle,
                     ),
                   ],
