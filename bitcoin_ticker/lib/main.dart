@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'price_screen.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() => runApp(MyApp());
+
+Future<void> main() async {
+  await dotenv.load(fileName: ".env"); // Ensure the file is loaded before the app starts
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
