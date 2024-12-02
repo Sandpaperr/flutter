@@ -70,26 +70,23 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
             const SizedBox(
               height: 48.0,
             ),
-            RoundedButton(),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                color: Colors.blueAccent,
-                borderRadius: BorderRadius.circular(30.0),
-                elevation: 5.0,
-                child: MaterialButton(
-                  onPressed: () {
-                    //Go to registration screen.
-                    Navigator.pushNamed(context, RegistrationScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: const Text(
-                    'Register',
-                  ),
-                ),
-              ),
+            RoundedButton(
+              color: Colors.lightBlueAccent,
+              buttonTitle: 'Log In',
+              onPressed: () {
+                //Go to login screen.
+                Navigator.pushNamed(context, LoginScreen.id);
+              },
+
             ),
+            RoundedButton(
+              color: Colors.blueAccent,
+              buttonTitle: 'Register',
+              onPressed: () {
+                //Go to registration screen.
+                Navigator.pushNamed(context, RegistrationScreen.id);
+              },
+            )
           ],
         ),
       ),
@@ -102,7 +99,7 @@ class RoundedButton extends StatelessWidget {
 
   final Color? color;
   final String? buttonTitle;
-  final Function? onPressed;
+  final VoidCallback? onPressed;
 
 
 
@@ -112,17 +109,14 @@ class RoundedButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 16.0),
       child: Material(
         elevation: 5.0,
-        color: Colors.lightBlueAccent,
+        color: color,
         borderRadius: BorderRadius.circular(30.0),
         child: MaterialButton(
-          onPressed: () {
-            //Go to login screen.
-            Navigator.pushNamed(context, LoginScreen.id);
-          },
+          onPressed: onPressed,
           minWidth: 200.0,
           height: 42.0,
-          child: const Text(
-            'Log In',
+          child: Text(
+            buttonTitle!,
           ),
         ),
       ),
