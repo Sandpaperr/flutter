@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'screens/welcome_screen.dart';
 import 'screens/login_screen.dart';
@@ -22,8 +20,11 @@ class FlashChat extends StatelessWidget {
 
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Colors.white,
         textTheme: const TextTheme(
           bodyLarge: TextStyle(color: Colors.black54),
+          bodySmall: TextStyle(color: Colors.black54),
+          bodyMedium: TextStyle(color: Colors.black54),
         ),
       ),
       home: WelcomeScreen(),
