@@ -21,7 +21,13 @@ class TaskScreen extends StatelessWidget {
         onPressed: (){
           showModalBottomSheet(
               context: context,
-              builder: (BuildContext context) => AddTaskScreen(),
+              isScrollControlled: true,
+              builder: (BuildContext context) => SingleChildScrollView(
+                  child: Container(
+                    padding: EdgeInsets.only(bottom: 10.0 + MediaQuery.of(context).viewInsets.bottom),
+                    child: AddTaskScreen(),
+                  ),
+              ),
           );
         },
       ),
@@ -78,7 +84,7 @@ class TaskScreen extends StatelessWidget {
           Expanded(
             child: Container(
               height: 300.0,
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               decoration:const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(

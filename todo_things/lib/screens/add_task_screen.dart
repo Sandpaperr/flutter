@@ -8,6 +8,7 @@ class AddTaskScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(left: 50.0, right: 50.0, top: 20.0,),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           //title
           const Text(
@@ -21,6 +22,8 @@ class AddTaskScreen extends StatelessWidget {
           //Text input
           const Center(
             child: TextField(
+              autofocus: true,
+              textAlign: TextAlign.center,
               decoration: InputDecoration(
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
@@ -38,10 +41,14 @@ class AddTaskScreen extends StatelessWidget {
             ),
           ),
 
+          const SizedBox(height: 20.0,),
+
           // button
           TextButton(
-            style: const ButtonStyle(
-              backgroundColor: WidgetStatePropertyAll(Colors.lightBlueAccent),
+            style:  TextButton.styleFrom(
+              minimumSize: const Size(double.infinity, 50),
+              backgroundColor: Colors.lightBlueAccent,
+              shape:const  RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.zero,),
             ),
             onPressed: (){},
             child: const Text(
