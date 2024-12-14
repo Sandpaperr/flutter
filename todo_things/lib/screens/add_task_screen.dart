@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_things/models/task_data.dart';
+import 'package:todo_things/models/task.dart';
 
 class AddTaskScreen extends StatelessWidget {
-  const AddTaskScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    String newTaskTitle = '';
     return Container(
       padding: const EdgeInsets.only(left: 50.0, right: 50.0, top: 20.0,),
       child: Column(
@@ -20,7 +23,7 @@ class AddTaskScreen extends StatelessWidget {
           ),
 
           //Text input
-          const Center(
+           Center(
             child: TextField(
               autofocus: true,
               textAlign: TextAlign.center,
@@ -38,6 +41,9 @@ class AddTaskScreen extends StatelessWidget {
                   )
                 )
               ),
+              onChanged: (newText){
+                newTaskTitle = newText;
+              },
             ),
           ),
 
@@ -50,7 +56,10 @@ class AddTaskScreen extends StatelessWidget {
               backgroundColor: Colors.lightBlueAccent,
               shape:const  RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.zero,),
             ),
-            onPressed: (){},
+            onPressed: (){
+              Provider.of<TaskData>(context, listen: false).addTask(newTaskTitle);
+              Navigator.pop(context);
+            },
             child: const Text(
               'Add',
               style: TextStyle(

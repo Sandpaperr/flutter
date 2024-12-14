@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:todo_things/widgets/task_list.dart';
 import 'add_task_screen.dart';
+import 'package:todo_things/models/task_data.dart';
+
 
 
 class TaskScreen extends StatelessWidget {
-  const TaskScreen({super.key});
 
 
   @override
@@ -39,10 +41,10 @@ class TaskScreen extends StatelessWidget {
           //title and subtitle
           Container(
             padding: const EdgeInsets.only(top: 60.0, left: 30.0, right: 30.0, bottom: 30.0),
-            child: const Column(
+            child:  Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   backgroundColor: Colors.white,
                   radius: 30.0,
                   child:Icon(
@@ -56,7 +58,7 @@ class TaskScreen extends StatelessWidget {
                 SizedBox(height: 10.0,),
 
                 // Title
-                Text(
+                const Text(
                   'ToDoThings',
                   style: TextStyle(
                     color: Colors.white,
@@ -68,8 +70,8 @@ class TaskScreen extends StatelessWidget {
 
                 //text with to-do left
                 Text(
-                  '12 Tasks',
-                  style: TextStyle(
+                  '${Provider.of<TaskData>(context).taskCount} Tasks',
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
                   ),
