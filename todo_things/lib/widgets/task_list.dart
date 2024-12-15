@@ -19,8 +19,8 @@ class TaskList extends StatelessWidget {
               //setState(() {Provider.of<TaskData>(context).tasks[index].toggleDone() ;});
               taskData.updateTask(task);
             },
-            removeTaskCallback: (){
-              taskData.removeTask(task);
+            longPressCallback: (){
+              taskData.deleteTask(task);
             },
           );
         },
